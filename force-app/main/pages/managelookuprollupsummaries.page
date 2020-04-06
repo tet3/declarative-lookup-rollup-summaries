@@ -175,6 +175,11 @@
 						<apex:outputLabel value="{!$ObjectType.LookupRollupSummary2__mdt.fields.TestCodeSeeAllData__c.Label}"/>
 						<apex:inputCheckbox value="{!LookupRollupSummary.TestCodeSeeAllData__c}"/>
 					</apex:pageBlockSectionItem>
+				</apex:pageBlockSection>
+				<apex:pageBlockSection title="Field Definitions" rendered="{!LEFT($User.UIThemeDisplayed,6) == 'Theme4'}" collapsible="true" id="fielddefs">
+					<p><b>{!$ObjectType.LookupRollupSummary2__mdt.fields.ParentObject__c.Label}:</b> {!$ObjectType.LookupRollupSummary2__mdt.fields.ParentObject__c.inlineHelpText}</p>
+					<p><b>{!$ObjectType.LookupRollupSummary2__mdt.fields.RelationshipField__c.Label}:</b> {!$ObjectType.LookupRollupSummary2__mdt.fields.RelationshipField__c.inlineHelpText}</p>
+					
 				</apex:pageBlockSection>			
 			</apex:pageBlock>
 		</apex:outputPanel>
