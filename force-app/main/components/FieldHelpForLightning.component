@@ -1,0 +1,17 @@
+<apex:component controller="FieldHelpForLightningController">
+    <apex:attribute name="stringFieldList" description="List of fields to show help for" type="String" required="true" assignTo="{!combinedFieldList}" />
+    <apex:attribute name="sectTitle" description="title of the section to be rendered" type="String" required="false" />
+
+    <apex:pageBlockSection columns="1" title="{!IF(ISBLANK(sectTitle),'Field Definitions',sectTitle)}" collapsible="true" id="fielddefs" html-name="ltngHelpSect">
+        <apex:dataTable value="{!fieldList}" var="f" rules="rows">
+            <apex:column>
+                <apex:facet name="header">Field</apex:facet>
+                <apex:outputText style="font-weight:500;" value="{!$ObjectType.LookupRollupSummary2__mdt.fields[f].Label}" />
+            </apex:column>
+            <apex:column>
+                <apex:facet name="header">What it does</apex:facet>
+                <apex:outputText value="{!$ObjectType.LookupRollupSummary2__mdt.fields[f].inlineHelpText}" />
+            </apex:column>    
+        </apex:dataTable> 
+    </apex:pageBlockSection>
+</apex:component>
