@@ -13,7 +13,7 @@
 				<apex:selectOptions value="{!Lookups}"/>
 			</apex:selectList>
 			<p/>
-			<apex:pageBlock mode="edit" id="rollupDetailView">
+			<apex:pageBlock mode="detail" id="rollupDetailView">
 				<apex:pageBlockButtons >
 					<apex:commandButton value="Save" action="{!save}"/>
 					<apex:commandButton value="Delete" action="{!deleteX}" rendered="{!LookupRollupSummary.Id!=null}"/>
@@ -79,7 +79,7 @@
 						<apex:inputTextArea cols="40" rows="3" value="{!LookupRollupSummary.RelationshipCriteriaFields__c}"/>		
 					</apex:pageBlockSectionItem>
 				</apex:pageBlockSection>
-				<c:FieldHelpForLightning rendered="{!LEFT($User.UIThemeDisplayed,5) == 'Theme'}" sectTitle="Lookup Relationship Help" stringFieldList="ParentObject__c,ChildObject__c,RelationshipField__c,RelationshipCriteria__c,RelationshipCriteriaFields__c" />
+				<c:FieldHelpForLightning rendered="{!LEFT($User.UIThemeDisplayed,6) == 'Theme4'}" sectTitle="Lookup Relationship Help" stringFieldList="ParentObject__c,ChildObject__c,RelationshipField__c,RelationshipCriteria__c,RelationshipCriteriaFields__c" />
 				<!-- object="{!$ObjectType.LookupRollupSummary2__mdt}" -->
 				<apex:pageBlockSection title="Rollup Details" columns="2" collapsible="false">
 					<apex:pageBlockSectionItem helpText="{!$ObjectType.LookupRollupSummary2__mdt.fields.FieldToAggregate__c.inlineHelpText}">
@@ -152,14 +152,14 @@
 						<apex:inputText value="{!LookupRollupSummary.RowLimit__c}"/>
 					</apex:pageBlockSectionItem>
 				</apex:pageBlockSection>
-				<c:FieldHelpForLightning rendered="{!LEFT($User.UIThemeDisplayed,5) == 'Theme'}" sectTitle="Rollup Details Help" stringFieldList="FieldToAggregate__c,Active__c,FieldToOrderBy__c,CalculationMode__c,AggregateOperation__c,CalculationSharingMode__c,AggregateResultField__c,AggregateAllRows__c,RowLimit__c" />
+				<c:FieldHelpForLightning rendered="{!LEFT($User.UIThemeDisplayed,6) == 'Theme4'}" sectTitle="Rollup Details Help" stringFieldList="FieldToAggregate__c,Active__c,FieldToOrderBy__c,CalculationMode__c,AggregateOperation__c,CalculationSharingMode__c,AggregateResultField__c,AggregateAllRows__c,RowLimit__c" />
 				<apex:pageBlockSection title="Text Lookups" columns="2" collapsible="false">
 					<apex:pageBlockSectionItem helpText="{!$ObjectType.LookupRollupSummary2__mdt.fields.ConcatenateDelimiter__c.inlineHelpText}">
 						<apex:outputLabel value="{!$ObjectType.LookupRollupSummary2__mdt.fields.ConcatenateDelimiter__c.Label}"/>
 						<apex:inputText value="{!LookupRollupSummary.ConcatenateDelimiter__c}"/>
 					</apex:pageBlockSectionItem>
 				</apex:pageBlockSection>
-				<c:FieldHelpForLightning rendered="{!LEFT($User.UIThemeDisplayed,5) == 'Theme'}" sectTitle="Text Lookups Help" stringFieldList="ConcatenateDelimiter__c" />
+				<c:FieldHelpForLightning rendered="{!LEFT($User.UIThemeDisplayed,6) == 'Theme4'}" sectTitle="Text Lookups Help" stringFieldList="ConcatenateDelimiter__c" />
 				<apex:pageBlockSection title="Description" columns="2" collapsible="false">
 					<apex:pageBlockSectionItem helpText="{!$ObjectType.LookupRollupSummary2__mdt.fields.Description__c.inlineHelpText}">
 						<apex:outputLabel value="{!$ObjectType.LookupRollupSummary2__mdt.fields.Description__c.Label}"/>
@@ -180,9 +180,8 @@
 						<apex:inputCheckbox value="{!LookupRollupSummary.TestCodeSeeAllData__c}"/>
 					</apex:pageBlockSectionItem>
 				</apex:pageBlockSection>
-				<c:FieldHelpForLightning rendered="{!LEFT($User.UIThemeDisplayed,5) == 'Theme'}" sectTitle="Advanced Help" stringFieldList="TestCode2__c,TestCodeParent__c,TestCodeSeeAllData__c" />
+				<c:FieldHelpForLightning rendered="{!LEFT($User.UIThemeDisplayed,6) == 'Theme4'}" sectTitle="Advanced Help" stringFieldList="TestCode2__c,TestCodeParent__c,TestCodeSeeAllData__c" />
 			</apex:pageBlock>
-			<apex:pageBlock title="My Content" mode="detail" rendered="false"><apex:pageBlockSection title="Hacky McHackerson" showHeader="true" rendered="false"><apex:pageBlockSectionItem><apex:outputText value="Label" /><apex:outputText value="Value" /></apex:pageBlockSectionItem></apex:pageBlockSection></apex:pageBlock>
 		</apex:outputPanel>
 	</apex:form>
 </apex:page>
